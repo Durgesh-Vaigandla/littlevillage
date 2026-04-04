@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Function Hall Booking - Little Village</title>
+
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <style>
+    body {
+      overflow: auto;
+      overflow-x: hidden;
+      min-height: 100vh;
+      height: auto;
+    }
+
+    .booking-hero {
+      padding-block: 220px 120px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .booking-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.72), rgba(62, 39, 35, 0.9));
+      z-index: -1;
+    }
+
+    .booking-hero .section-text {
+      max-width: 720px;
+      margin: 0 auto 30px;
+      color: var(--white-alpha-20);
+      font-size: 1.7rem;
+    }
+
+    .booking-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .booking-shell {
+      padding-block-start: 20px;
+      padding-block-end: 100px;
+    }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .booking-card {
+      background: linear-gradient(145deg, rgba(78, 52, 46, 0.5), rgba(33, 33, 33, 0.85));
+      border: 1px solid var(--white-alpha-10);
+      border-radius: var(--radius-24);
+      padding: 32px;
+      box-shadow: var(--shadow-1);
+    }
+
+    .booking-card .headline-2 {
+      margin-block-end: 18px;
+    }
+
+    .booking-points {
+      display: grid;
+      gap: 12px;
+      color: var(--quick-silver);
+      font-size: 1.6rem;
+      margin-block-end: 20px;
+    }
+
+    .booking-meta {
+      display: grid;
+      gap: 8px;
+      color: var(--gold-crayola);
+      font-size: 1.4rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .booking-form-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .booking-form-grid .input-field,
+    .booking-form-grid select,
+    .booking-form-grid textarea {
+      width: 100%;
+      background-color: var(--eerie-black-2);
+      color: var(--white);
+      border: 1px solid var(--white-alpha-10);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 1.5rem;
+      outline: none;
+    }
+
+    .booking-form-grid textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .booking-form-grid .input-field:focus,
+    .booking-form-grid select:focus,
+    .booking-form-grid textarea:focus {
+      border-color: var(--gold-crayola);
+    }
+
+    .booking-form-grid .btn {
+      width: 100%;
+      max-width: 100%;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    .booking-note {
+      margin-top: 12px;
+      color: var(--quick-silver);
+      font-size: 1.3rem;
+      text-align: center;
+    }
+
+    @media (min-width: 992px) {
+      .booking-grid {
+        grid-template-columns: 1fr 1.1fr;
+      }
+    }
+  </style>
+</head>
+
+<body class="inner-page" id="top">
+
+  <div class="topbar">
+    <div class="container">
+      <address class="topbar-item">
+        <div class="icon">
+          <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">
+          Little Village, Near NRI Hospital, Mangalagiri, Guntur, Andhra Pradesh
+        </span>
+      </address>
+
+      <div class="separator"></div>
+
+      <div class="topbar-item item-2">
+        <div class="icon">
+          <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">Open Daily : 11:30 AM - 10:30 PM</span>
+      </div>
+
+      <a href="tel:+919440159707" class="topbar-item link">
+        <div class="icon">
+          <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">+91 94401 59707</span>
+      </a>
+
+      <div class="separator"></div>
+
+      <a href="https://wa.me/919440159707" class="topbar-item link">
+        <div class="icon">
+          <ion-icon name="logo-whatsapp" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">WhatsApp Us</span>
+      </a>
+    </div>
+  </div>
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <img src="./assets/images/lvlogo.png" width="160" height="50" alt="Little Village Home">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <a href="index.html" class="logo">
+          <img src="./assets/images/lvlogo.png" width="160" height="50" alt="Little Village menu logo">
+        </a>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">Home</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="menu.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">Full Menu</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="aboutus.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">About Us</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="gallery.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">Gallery</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="booking.html" class="navbar-link hover-underline active">
+              <div class="separator"></div>
+              <span class="span">Function Hall</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="contact.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">Contact</span>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="text-center">
+          <p class="headline-1 navbar-title">Visit Us</p>
+
+          <address class="body-4">
+            NRI Hospital Road, Mangalagiri, <br>
+            Guntur, Andhra Pradesh
+          </address>
+
+          <p class="body-4 navbar-text">Daily : 11:30 AM - 10:30 PM</p>
+
+          <div class="separator"></div>
+
+          <p class="contact-label">Quick Support</p>
+
+          <a href="tel:+919440159707" class="body-1 contact-number hover-underline">
+            +91 94401 59707
+          </a>
+        </div>
+
+      </nav>
+
+      <a href="https://wa.me/919440159707" class="btn btn-secondary">
+        <span class="text text-1"><ion-icon name="logo-whatsapp" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:6px;"></ion-icon>Order on WhatsApp</span>
+        <span class="text text-2" aria-hidden="true"><ion-icon name="logo-whatsapp" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:6px;"></ion-icon>Order on WhatsApp</span>
+      </a>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+  <main>
+    <section class="booking-hero text-center has-bg-image" style="background-image: url('./assets/images/hero-slider-2.jpg');">
+      <div class="container">
+        <p class="section-subtitle label-2">Function Hall</p>
+        <h1 class="headline-1">Plan Your Event At Little Village</h1>
+        <p class="section-text">
+          Reserve our village-inspired function hall for weddings, receptions, birthdays, family gatherings and private events.
+        </p>
+        <div class="booking-actions">
+          <a href="#booking-form" class="btn btn-primary">
+            <span class="text text-1">Reserve Date</span>
+            <span class="text text-2" aria-hidden="true">Reserve Date</span>
+          </a>
+          <a href="tel:+919440159707" class="btn btn-secondary">
+            <span class="text text-1"><ion-icon name="call" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:6px;"></ion-icon>Call For Details</span>
+            <span class="text text-2" aria-hidden="true"><ion-icon name="call" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:6px;"></ion-icon>Call For Details</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section booking-shell" id="booking-form">
+      <div class="container booking-grid">
+        <div class="booking-card">
+          <h2 class="headline-2">Venue Highlights</h2>
+          <div class="booking-points">
+            <p>Spacious hall layout suitable for medium and large gatherings.</p>
+            <p>Village-theme decor with warm lighting and rustic seating accents.</p>
+            <p>Dedicated dining support from our multi-cuisine kitchen team.</p>
+            <p>Flexible event slots for lunch and dinner sessions.</p>
+          </div>
+          <div class="booking-meta">
+            <span>Capacity: Up to 200 guests</span>
+            <span>Location: NRI Hospital Road, Mangalagiri</span>
+            <span>Direct Booking Line: +91 94401 59707</span>
+          </div>
+        </div>
+
+        <div class="booking-card">
+          <h2 class="headline-2 text-center">Request A Reservation</h2>
+          <form id="bookingForm" class="booking-form-grid">
+            <input type="text" id="name" class="input-field" placeholder="Full Name" required>
+            <input type="tel" id="phone" class="input-field" placeholder="Phone Number" required>
+            <select id="event" required>
+              <option value="">Select Event Type</option>
+              <option>Wedding</option>
+              <option>Reception</option>
+              <option>Birthday</option>
+              <option>Engagement</option>
+              <option>Corporate Event</option>
+              <option>Family Gathering</option>
+            </select>
+            <input type="date" id="date" class="input-field" required>
+            <input type="number" id="guests" class="input-field" min="10" placeholder="Expected Guests" required>
+            <textarea id="msg" placeholder="Additional Requirements"></textarea>
+
+            <button class="btn btn-secondary" type="submit">
+              <span class="text text-1"><ion-icon name="logo-whatsapp" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:6px;"></ion-icon>Confirm On WhatsApp</span>
+              <span class="text text-2" aria-hidden="true"><ion-icon name="logo-whatsapp" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:6px;"></ion-icon>Confirm On WhatsApp</span>
+            </button>
+          </form>
+          <p class="booking-note">Our team will review your request and confirm availability.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer section has-bg-image text-center" id="footer"
+    style="background-image: url('./assets/images/footer-bg.jpg')">
+    <div class="container">
+
+      <div class="footer-top grid-list">
+
+        <div class="footer-brand has-before has-after">
+
+          <a href="index.html" class="logo">
+            <h2 class="headline-1" style="color: var(--accent-wheat); margin-bottom: 20px;">LITTLE VILLAGE</h2>
+          </a>
+
+          <address class="body-4">
+            NRI Hospital Road, Mangalagiri, Guntur, Andhra Pradesh
+          </address>
+
+          <a href="mailto:info@littlevillage.com" class="body-4 contact-link">info@littlevillage.com</a>
+
+          <a href="tel:+919440159707" class="body-4 contact-link">Inquiries : +91 94401 59707</a>
+
+          <p class="body-4">
+            Open : 11:30 AM - 10:30 PM
+          </p>
+
+          <div class="wrapper">
+            <div class="separator"></div>
+            <div class="separator"></div>
+            <div class="separator"></div>
+          </div>
+
+          <p class="title-1">Special Events</p>
+
+          <p class="label-1">
+            Book our <span class="span">Function Hall</span> for your special days.
+          </p>
+
+          <a href="booking.html" class="btn btn-secondary footer-cta-btn">
+            <span class="text text-1">Book Now</span>
+            <span class="text text-2" aria-hidden="true">Book Now</span>
+          </a>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <a href="index.html" class="label-2 footer-link hover-underline">Home</a>
+          </li>
+
+          <li>
+            <a href="menu.html" class="label-2 footer-link hover-underline">Full Menu</a>
+          </li>
+
+          <li>
+            <a href="aboutus.html" class="label-2 footer-link hover-underline">About Us</a>
+          </li>
+
+          <li>
+            <a href="booking.html" class="label-2 footer-link hover-underline">Function Hall</a>
+          </li>
+
+          <li>
+            <a href="contact.html" class="label-2 footer-link hover-underline">Contact</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Facebook</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Instagram</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Twitter</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Youtube</a>
+          </li>
+
+          <li>
+            <a href="https://maps.app.goo.gl/B9WqXW6YxX8X8X8X8" target="_blank"
+              class="label-2 footer-link hover-underline">Google Map</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p class="copyright">
+          &copy; 2026 Little Village Multi Cuisine Restaurant. All Rights Reserved.
+        </p>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+  <script>
+    const number = "919440159707";
+
+    document.getElementById("bookingForm").onsubmit = function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const event = document.getElementById("event").value;
+      const date = document.getElementById("date").value;
+      const guests = document.getElementById("guests").value;
+      const msg = document.getElementById("msg").value.trim();
+
+      let text = `Little Village Function Hall Request\n\n`;
+      text += `Name: ${name}\n`;
+      text += `Phone: ${phone}\n`;
+      text += `Event Type: ${event}\n`;
+      text += `Preferred Date: ${date}\n`;
+      text += `Guest Count: ${guests}\n`;
+
+      if (msg) {
+        text += `Additional Requirements: ${msg}\n`;
+      }
+
+      text += `\nPlease confirm availability and next steps.`;
+
+      window.open(`https://wa.me/${number}?text=${encodeURIComponent(text)}`, "_blank");
+    };
+  </script>
+
+  <script src="./assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Little Village</title>
+
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <style>
+    body {
+      overflow: auto;
+      overflow-x: hidden;
+      min-height: 100vh;
+      height: auto;
+    }
+
+    .page-intro {
+      padding-block: 140px 80px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .gallery-card {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--white-alpha-10);
+      background: rgba(0, 0, 0, 0.18);
+      box-shadow: var(--shadow-1);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+    }
+
+    @media (max-width: 900px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body class="inner-page" id="top">
+
+  <div class="topbar">
+    <div class="container">
+
+      <address class="topbar-item">
+        <div class="icon">
+          <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">
+          Little Village, Near NRI Hospital, Mangalagiri, Guntur, Andhra Pradesh
+        </span>
+      </address>
+
+      <div class="separator"></div>
+
+      <div class="topbar-item item-2">
+        <div class="icon">
+          <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">Open Daily : 11:30 AM - 10:30 PM</span>
+      </div>
+
+      <a href="tel:+91 94401 59707" class="topbar-item link">
+        <div class="icon">
+          <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">+91 94401 59707</span>
+      </a>
+
+      <div class="separator"></div>
+
+      <a href="https://wa.me/919440159707" class="topbar-item link">
+        <div class="icon">
+          <ion-icon name="logo-whatsapp" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">WhatsApp Us</span>
+      </a>
+
+    </div>
+  </div>
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <img src="./assets/images/lvlogo.png" width="160" height="50" alt="Little Village Home">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <a href="index.html" class="logo">
+          <img src="./assets/images/lvlogo.png" width="160" height="50" alt="Little Village menu logo">
+        </a>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">Home</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="menu.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">Full Menu</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="aboutus.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">About Us</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="gallery.html" class="navbar-link hover-underline active">
+              <div class="separator"></div>
+              <span class="span">Gallery</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="booking.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">Function Hall</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="contact.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">Contact</span>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="text-center">
+          <p class="headline-1 navbar-title">Visit Us</p>
+
+          <address class="body-4">
+            NRI Hospital Road, Mangalagiri, <br>
+            Guntur, Andhra Pradesh
+          </address>
+
+          <p class="body-4 navbar-text">Daily : 11:30 AM - 10:30 PM</p>
+
+          <div class="separator"></div>
+
+          <p class="contact-label">Quick Support</p>
+
+          <a href="tel:+911234567890" class="body-1 contact-number hover-underline">
+            +91 12345 67890
+          </a>
+        </div>
+
+      </nav>
+
+      <a href="https://wa.me/919440159707" class="btn btn-secondary">
+        <span class="text text-1"><ion-icon name="logo-whatsapp" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:6px;"></ion-icon>Order on WhatsApp</span>
+        <span class="text text-2" aria-hidden="true"><ion-icon name="logo-whatsapp" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:6px;"></ion-icon>Order on WhatsApp</span>
+      </a>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+  <main>
+    <article class="page-intro section">
+      <div class="container">
+        <p class="section-subtitle label-2 text-center">Gallery</p>
+        <h1 class="headline-1 section-title text-center">Moments From Little Village</h1>
+
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer section has-bg-image text-center" id="footer"
+    style="background-image: url('./assets/images/footer-bg.jpg')">
+    <div class="container">
+
+      <div class="footer-top grid-list">
+
+        <div class="footer-brand has-before has-after">
+
+          <a href="index.html" class="logo">
+            <h2 class="headline-1" style="color: var(--accent-wheat); margin-bottom: 20px;">LITTLE VILLAGE</h2>
+          </a>
+
+          <address class="body-4">
+            NRI Hospital Road, Mangalagiri, Guntur, Andhra Pradesh
+          </address>
+
+          <a href="mailto:info@littlevillage.com" class="body-4 contact-link">info@littlevillage.com</a>
+
+          <a href="tel:+919440159707" class="body-4 contact-link">Inquiries : +91 94401 59707</a>
+
+          <p class="body-4">
+            Open : 11:30 AM - 10:30 PM
+          </p>
+
+          <div class="wrapper">
+            <div class="separator"></div>
+            <div class="separator"></div>
+            <div class="separator"></div>
+          </div>
+
+          <p class="title-1">Special Events</p>
+
+          <p class="label-1">
+            Book our <span class="span">Function Hall</span> for your special days.
+          </p>
+
+          <a href="booking.html" class="btn btn-secondary footer-cta-btn">
+            <span class="text text-1">Book Now</span>
+            <span class="text text-2" aria-hidden="true">Book Now</span>
+          </a>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <a href="index.html" class="label-2 footer-link hover-underline">Home</a>
+          </li>
+
+          <li>
+            <a href="menu.html" class="label-2 footer-link hover-underline">Full Menu</a>
+          </li>
+
+          <li>
+            <a href="aboutus.html" class="label-2 footer-link hover-underline">About Us</a>
+          </li>
+
+          <li>
+            <a href="booking.html" class="label-2 footer-link hover-underline">Function Hall</a>
+          </li>
+
+          <li>
+            <a href="contact.html" class="label-2 footer-link hover-underline">Contact</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Facebook</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Instagram</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Twitter</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Youtube</a>
+          </li>
+
+          <li>
+            <a href="https://maps.app.goo.gl/B9WqXW6YxX8X8X8X8" target="_blank"
+              class="label-2 footer-link hover-underline">Google Map</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p class="copyright">
+          &copy; 2026 Little Village Multi Cuisine Restaurant. All Rights Reserved.
+        </p>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+  <script>
+    const galleryImages = [
+      "./assets/images/Little%20Village/Pics/RNP03358%20Medium.png",
+      "./assets/images/Little%20Village/Pics/RNP03361%20Medium.png",
+      "./assets/images/Little%20Village/Pics/RNP03372%20Medium.png",
+      "./assets/images/Little%20Village/Pics/RNP03399%20Medium.png",
+      "./assets/images/Little%20Village/Pics/RNP03454%20Medium.png",
+      "./assets/images/Little%20Village/Pics/RNP03462%20Medium.png",
+      "./assets/images/Little%20Village/Pics/RNP03466%20Medium.png",
+      "./assets/images/Little%20Village/Pics/RNP03474%20Medium.png",
+      "./assets/images/Little%20Village/Pics/RNP03480%20Medium.png",
+      "./assets/images/Little%20Village/Pics/RNP03490%20Medium.png",
+      "./assets/images/Little%20Village/Pics/RNP03492%20Medium.png",
+      "./assets/images/Little%20Village/Pics/RNP03494%20Medium.png",
+      "./assets/images/Little%20Village/Pics/RNP03506%20Medium.png",
+      "./assets/images/Little%20Village/Pics/RNP03513%20Medium.png",
+      "./assets/images/Little%20Village/Net%20Lonivi/171770288_844740909410265_2896760480223456342_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/171825685_844740926076930_6796645193114043725_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/173860499_844740862743603_6824421930726388769_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/223026944_910548339496188_2063701541683341590_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/25299399_187533141797715_958062627058695550_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/26113784_192256101325419_6189502936168961239_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/28378481_208902196327476_4830380563373373204_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/53666091_374782923072735_1917966604361007104_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/54523369_384138768803817_8675398389581479936_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/54526040_385415095342851_2450588973366509568_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/55495960_385415245342836_4353909318341361664_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/56358465_389801621570865_1917989234543689728_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/56732705_391707644713596_5098273983061557248_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/57056220_402551410295886_3945131433667854336_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/59144690_403011686916525_6384746525074915328_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/59407204_403007710250256_4152007196428730368_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/60226114_407829326434761_4538112708955865088_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/60340152_407829356434758_7914629470936367104_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/60345881_407824546435239_5975144376047763456_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/60609943_410936626124031_36259479712432128_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/61014715_410936666124027_693589574231785472_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/61063742_410936736124020_5340491047426326528_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/64962368_428186454399048_1315203768689623040_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/64997748_428186601065700_7646430087813791744_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/65740382_434005577150469_4324235462307741696_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/67098344_443251412892552_8260998994012930048_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/67249451_443251509559209_5591484971949752320_n.jpg",
+      "./assets/images/Little%20Village/Net%20Lonivi/67564250_444975406053486_2660819122765430784_n.jpg"
+    ];
+
+    const galleryGrid = document.getElementById("galleryGrid");
+
+    galleryImages.forEach((imagePath, index) => {
+      const figure = document.createElement("figure");
+      figure.className = "gallery-card";
+
+      const image = document.createElement("img");
+      image.src = imagePath;
+      image.loading = "lazy";
+      image.alt = `Little Village gallery image ${index + 1}`;
+
+      figure.appendChild(image);
+      galleryGrid.appendChild(figure);
+    });
+  </script>
+
+  <script src="./assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
